@@ -1,5 +1,5 @@
 <template>
-    <SiteLayout>
+    <AppLayout>
         <main class="home-page">
             <!-- Hero Section -->
             <section class="hero-section">
@@ -72,11 +72,11 @@
                 </div>
             </section>
         </main>
-    </SiteLayout>
+    </AppLayout>
 </template>
 
 <script setup>
-import SiteLayout from '@/Layouts/SiteLayout.vue';
+import AppLayout from '@/Layouts/AppLayout.vue';
 import { Link } from '@inertiajs/vue3';
 </script>
 
@@ -93,16 +93,29 @@ import { Link } from '@inertiajs/vue3';
     padding: 0 1.5rem;
 }
 
+/* Color Variables */
+:root {
+    --color-primary: #4f46e5;
+    --color-primary-dark: #4338ca;
+    --color-accent: #7c3aed;
+    --color-dark: #1e293b;
+    --color-gray-600: #475569;
+    --color-gray-700: #334155;
+    --color-gray-300: #cbd5e1;
+    --color-gray-50: #f8fafc;
+    --color-light: #f1f5f9;
+}
+
 /* Hero Section */
 .hero-section {
-    padding: 5rem 0;
+    padding: 2rem 0;
     background: linear-gradient(to bottom, #f8fafc, #ffffff);
 }
 
 .hero-content {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 1rem;
 }
 
 .hero-title {
@@ -187,7 +200,7 @@ import { Link } from '@inertiajs/vue3';
 
 /* Features Section */
 .features-section {
-    padding: 5rem 0;
+    padding: 2rem 0;
     background-color: white;
 }
 

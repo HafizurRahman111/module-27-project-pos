@@ -7,7 +7,7 @@
                 </Link>
 
                 <nav class="navigation" aria-label="Main navigation">
-                    <template v-if="$page.props.auth.user">
+                    <template v-if="authUser">
                         <Link href="/dashboard" class="nav-link" aria-label="Dashboard">
                         <i class="bi bi-speedometer2"></i>
                         <span class="link-text">Dashboard</span>
@@ -34,7 +34,10 @@
 </template>
 
 <script setup>
-import { Link, router } from '@inertiajs/vue3';
+import { Link, router, usePage } from '@inertiajs/vue3';
+
+const { props } = usePage();
+const authUser = props.auth?.user;
 
 const logout = async () => {
     try {
@@ -66,7 +69,7 @@ const logout = async () => {
 /* Header Styles */
 .app-header {
     background-color: var(--color-secondary);
-    padding: 1rem 0;
+    padding: .3rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -120,7 +123,7 @@ const logout = async () => {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.625rem 1.25rem;
+    padding: 0.3rem 1rem;
     border-radius: var(--radius-sm);
     font-weight: 500;
     text-decoration: none;
@@ -130,6 +133,13 @@ const logout = async () => {
     border: 1px solid transparent;
     cursor: pointer;
 }
+
+.nav-link:hover {
+    background: rgb(34, 99, 185);
+    color: white;
+    transform: translateY(-1px);
+}
+
 
 .nav-link i {
     font-size: 1.1rem;
@@ -163,12 +173,12 @@ const logout = async () => {
 
 /* Logout Button */
 .nav-link.logout {
-    background: rgba(239, 68, 68, 0.1);
+    background: rgba(245, 71, 71, 0.253);
     border-color: rgba(239, 68, 68, 0.2);
 }
 
 .nav-link.logout:hover {
-    background: rgba(239, 68, 68, 0.2);
+    background: rgba(239, 68, 68, 0.336);
     transform: translateY(-1px);
 }
 

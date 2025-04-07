@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'test1@example.com',
             'password' => bcrypt('pass1234'),
             'mobile' => '1234567890',
-            'otp' => 1234,
+            'otp' => 123456,
             'remember_token' => \Str::random(10),
         ]);
 
@@ -27,18 +27,16 @@ class DatabaseSeeder extends Seeder
             'email' => 'test2@example.com',
             'password' => bcrypt('pass12345'),
             'mobile' => '9876543210',
-            'otp' => 5678,
+            'otp' => 567809,
             'remember_token' => \Str::random(10),
         ]);
 
-
         $this->call([
             CustomerSeeder::class,
-            CategorySeeder::class,
             BrandSeeder::class,
+            CategorySeeder::class,
             ProductSeeder::class,
             InvoiceSeeder::class,
         ]);
-
     }
 }

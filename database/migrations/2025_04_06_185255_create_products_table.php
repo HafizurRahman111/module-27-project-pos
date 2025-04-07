@@ -20,6 +20,7 @@ return new class extends Migration {
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('brand_id');
+            $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')
                 ->cascadeOnUpdate()->restrictOnDelete();
@@ -27,8 +28,6 @@ return new class extends Migration {
                 ->cascadeOnUpdate()->restrictOnDelete();
             $table->foreign('brand_id')->references('id')->on('brands')
                 ->cascadeOnUpdate()->restrictOnDelete();
-
-            $table->timestamps();
         });
     }
 

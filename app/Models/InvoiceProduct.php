@@ -10,7 +10,6 @@ class InvoiceProduct extends Model
     /** @use HasFactory<\Database\Factories\InvoiceProductFactory> */
     use HasFactory;
 
-
     protected $fillable = [
         'invoice_id',
         'product_id',
@@ -19,9 +18,9 @@ class InvoiceProduct extends Model
         'user_id'
     ];
 
-    public function invoice()
+    public function user()
     {
-        return $this->belongsTo(Invoice::class);
+        return $this->belongsTo(User::class);
     }
 
     public function product()
@@ -29,8 +28,10 @@ class InvoiceProduct extends Model
         return $this->belongsTo(Product::class);
     }
 
-    public function user()
+
+    public function invoice()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Invoice::class);
     }
+
 }

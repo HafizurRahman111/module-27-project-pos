@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\InvoiceProduct;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,6 +12,6 @@ class InvoiceProductSeeder extends Seeder
      */
     public function run(): void
     {
-        // InvoiceProduct::factory(20)->create();
+        //
     }
 }

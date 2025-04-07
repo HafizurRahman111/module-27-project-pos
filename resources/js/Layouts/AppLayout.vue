@@ -57,19 +57,19 @@ import AppFooter from './AppFooter.vue';
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 .5rem;
 }
 
 /* ===== Content Styles ===== */
 .app-content {
     flex: 1;
-    padding: 2rem 0;
+    padding: .5rem 0;
 }
 
 .content-card {
     background: white;
     border-radius: var(--radius-md);
-    padding: 2rem;
+    padding: 1rem;
     box-shadow: var(--shadow-sm);
     border: 1px solid rgba(0, 0, 0, 0.03);
     animation: fadeIn 0.3s ease-out;

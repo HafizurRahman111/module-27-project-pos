@@ -35,7 +35,7 @@ import { Link } from '@inertiajs/vue3';
 .app-footer {
     background: var(--color-secondary);
     color: white;
-    padding: 3rem 0 1.5rem;
+    padding: 2rem 0 1rem;
 }
 
 .footer-grid {

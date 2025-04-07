@@ -20,13 +20,12 @@ return new class extends Migration {
             $table->decimal('payable', 10, 2);
             $table->enum('status', ['pending', 'paid', 'overdue'])->default('pending');
             $table->unsignedBigInteger('user_id');
+            $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')
                 ->cascadeOnUpdate()->restrictOnDelete();
             $table->foreign('customer_id')->references('id')->on('customers')
                 ->cascadeOnUpdate()->restrictOnDelete();
-
-            $table->timestamps();
         });
     }
 

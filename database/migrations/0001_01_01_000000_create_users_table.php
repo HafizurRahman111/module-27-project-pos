@@ -18,6 +18,8 @@ return new class extends Migration {
             $table->string('password');
             $table->string('mobile')->unique();
             $table->string('otp')->default(0);
+            $table->timestamp('otp_expires_at')->nullable();
+            $table->string('otp_attempts')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

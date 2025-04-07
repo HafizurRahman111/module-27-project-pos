@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->integer('quantity');
             $table->decimal('sale_price', 10, 2);
             $table->unsignedBigInteger('user_id');
+            $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')
                 ->cascadeOnUpdate()->restrictOnDelete();
@@ -24,8 +25,6 @@ return new class extends Migration {
                 ->cascadeOnUpdate()->restrictOnDelete();
             $table->foreign('product_id')->references('id')->on('products')
                 ->cascadeOnUpdate()->restrictOnDelete();
-
-            $table->timestamps();
         });
     }
 
