@@ -21,14 +21,14 @@ class Invoice extends Model
         'user_id'
     ];
 
-    public function customer()
-    {
-        return $this->belongsTo(Customer::class);
-    }
-
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
     }
 
     // Relationship to the InvoiceProduct model (Many-to-many via pivot table)

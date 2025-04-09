@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Brand;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class BrandController extends Controller
 {
@@ -13,7 +14,8 @@ class BrandController extends Controller
      */
     public function index()
     {
-        //
+        $brands = Brand::all();
+        return Inertia::render('Dashboard/Brand/Index', ['brands' => $brands]);
     }
 
     /**
@@ -59,8 +61,11 @@ class BrandController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Brand $brand)
+    public function destroy($id)
     {
-        //
+        $brand = Brand::findOrFail($id);
+        $brand->delete();
+
+        return Inertia::location(route('brands.index'));
     }
 }
